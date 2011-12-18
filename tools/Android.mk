@@ -76,10 +76,10 @@ LOCAL_MODULE:=hciconfig
 
 include $(BUILD_EXECUTABLE)
 
+ifneq ($(BOARD_HAVE_BLUETOOTH_CUSTOM_HCITOOL), true)
 #
 # hcitool
 #
-
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES:= \
@@ -101,6 +101,8 @@ LOCAL_MODULE_TAGS := eng
 LOCAL_MODULE:=hcitool
 
 include $(BUILD_EXECUTABLE)
+
+endif
 
 #
 # l2ping
